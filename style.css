@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    /* Usa min-height para permitir scroll em ecrãs pequenos na horizontal */
+    min-height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Padding evita que o container toque nas bordas em telemóveis */
+    padding: 20px; 
+    background-color: #ff99ad;
+    background-image:
+        radial-gradient(at 86% 45%, hsla(22, 70%, 77%, 1) 0px, transparent 50%),
+        radial-gradient(at 21% 96%, hsla(294, 82%, 79%, 1) 0px, transparent 50%),
+        radial-gradient(at 16% 5%, hsla(193, 63%, 69%, 1) 0px, transparent 50%),
+        radial-gradient(at 94% 56%, hsla(352, 76%, 61%, 1) 0px, transparent 50%),
+        radial-gradient(at 66% 76%, hsla(160, 73%, 62%, 1) 0px, transparent 50%),
+        radial-gradient(at 7% 2%, hsla(32, 97%, 73%, 1) 0px, transparent 50%),
+        radial-gradient(at 49% 76%, hsla(59, 86%, 79%, 1) 0px, transparent 50%);
+    background-attachment: fixed; /* Garante que o fundo não se move estranhamente no scroll */
+}
+
+.container {
+    /* Alteração Crucial para Mobile: */
+    width: 100%;       /* Ocupa a largura disponível... */
+    max-width: 400px;  /* ...mas nunca ultrapassa 400px */
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.container .header {
+    font-size: 22px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 14px;
+}
+
+.container .settings p {
+    font-size: 14px;
+    font-weight: 500;
+    color: #a5a5a5;
+    margin-bottom: 12px;
+}
+
+.container .settings select {
+    width: 100%;
+    padding: 8px 10px; /* Aumentei ligeiramente para facilitar o toque */
+    border: 1px solid #a5a5a5;
+    border-radius: 5px;
+    font-size: 14px; /* Garante que o texto do select não seja minúsculo */
+    background-color: white; /* Fix para alguns browsers móveis */
+}
+
+.container .separator {
+    width: 100%;
+    height: 1px;
+    background: #a5a5a5;
+    opacity: 0.5;
+    margin: 20px 0;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Mais espaço entre ícone e texto */
+    margin-bottom: 20px;
+    height: 48px; /* Aumentado para 48px (tamanho ideal para toque em mobile) */
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    color: #fff;
+    background: #303f9f;
+    transition: background 0.3s ease; /* Suaviza a mudança de cor */
+}
+
+.btn:active {
+    transform: scale(0.98); /* Efeito visual de clique */
+}
+
+.btn i {
+    font-size: 24px;
+}
+
+.btn:disabled {
+    background: #a5a5a5;
+    cursor: not-allowed;
+}
+
+.container .record .bx-spin {
+    display: none;
+}
+
+.container .record.recording .bx-spin {
+    display: block;
+}
+
+.container .record.recording i:first-child {
+    display: none;
+}
+
+.container .result {
+    width: 100%;
+    border: 1px solid #a5a5a5;
+    height: 150px; /* Um pouco mais alto para ver mais texto */
+    overflow-y: auto; /* Scroll apenas se necessário */
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px; /* Aumentado de 10px para 14px para leitura em mobile */
+    margin: 10px 0 20px;
+    color: #333;
+    font-weight: 500;
+    line-height: 1.5; /* Melhora a leitura do texto */
+}
+
+.container .result p {
+    display: inline;
+    margin-left: 3px;
+    color: #a5a5a5;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px; /* Espaço entre botões */
+}
+
+.buttons .btn {
+    margin-bottom: 10px;
+    /* Garante que os botões tenham o mesmo tamanho */
+    flex: 1; 
+}
+
+/* Rodapé */
+footer {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #666;
+    padding: 10px 0;
+    width: 100%;
+}
+
+footer a {
+    text-decoration: none;
+    color: #303f9f;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Media Query para ecrãs muito pequenos (ex: iPhone SE antigo) */
+@media (max-width: 350px) {
+    .container {
+        padding: 15px;
+    }
+    .header {
+        font-size: 18px;
+    }
+    .btn {
+        font-size: 13px;
+    }
+}
